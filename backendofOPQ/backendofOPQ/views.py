@@ -14,7 +14,7 @@ def indexpage(request):
             {'name':'testing','phone': 9982148469}
         ]
     }
-    return render(request,"index.html",data)
+    return render(request,"index.html")
 
 
 
