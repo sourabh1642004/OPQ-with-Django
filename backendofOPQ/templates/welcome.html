@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Fonawesome-->
-    <link rel="stylesheet" href="./static/bootstrap-css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-css/bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
-    <link rel="stylesheet" href="./static/css/styleWelcome.css">
-    <script src="https://kit.fontawesome.com/b4ff4e859b.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="./css/styleWelcome.css">
     <title>Welcome!</title>
 </head>
 <body>
-  
 <header>
   <!--*Start navbar*-->
   <nav class="navbar navbar-expand-lg bg-transparent">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">OPQ</a>
+          <form class="d-flex">
+            <button class="btn" type="submit"><a class="nav-link" href="index.html">Log Out</a></button>
+          </form>
         </div>
       </div>
     </nav>
@@ -40,19 +40,15 @@
   <div class="container">
       <article>
           <div class="welcome text-center">
-              <h1>Welcome</h1>
-              <p id="welcome-p">An online exam is a type of virtual exam undertaken on a computer device (desktop, laptop) using the internet. One can give and take an online examination from any location remotely. 
-                Most online exams are invigilated either through human proctors or through various types of proctoring software or using a mix of the two.Online exams, also known as virtual exams, enables examiners 
-                to conduct exams using the internet for remote candidates. In an online examination, candidates are expected to answer the questions on their systems. The test window closes once the exam is over. 
-                 An online exam does not have to be in an MCQ format – it can be written in any desired form.
+              <h1>Welcome <span id="user_name"></span></h1>
+              <p id="welcome-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et minima hic iusto voluptatem ratione, veniam velit quasi eum aliquam cum impedit dignissimos corrupti accusantium neque, laboriosam nesciunt delectus ab id.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius porro, repudiandae reiciendis explicabo numquam odio assumenda dolor est blanditiis voluptates itaque, dignissimos pariatur, laborum iusto? Exercitationem dolor reprehenderit quod.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, accusantium eligendi provident, explicabo ex et enim repellat sit ea cupiditate laudantium minus nobis molestiae vel ullam aspernatur? Provident, alias dolor!
               </p>
-              <button class="btn" type="button"><a  id="btnH" href="login.html">Sign In</a></button>
-              <button class="btn" type="button"><a id="btnH" href="signup.html">Sign Up</a></button>
-            </div>
+              <button class="btn col-lg-3" type="button"><a id="let's-go">Let's Start</a></button>
+          </div>
       </article>
   </div>
-
-  
 </main>
 <!--End Websit body(main section)-->
 
@@ -64,8 +60,7 @@
 <!--End Footer-->
 
 <!--**********************************************-->
-
-<nav id="welnav">
+<nav id="welnav" class="clearfix">
   <nav>
   <div>
     <img src="" alt="">
@@ -87,7 +82,7 @@
         hello@opq.in
       </p>
       <p>
-        +91797689067
+        7976890679
       </p>
   
     </ol>
@@ -97,12 +92,7 @@
   </nav>
 
 
-<!-- <div class="clearfix"></div> -->
-
 <!--**********************************************-->
-{% for n in clist %}
-<div> {{n}}</div>
-{% endfor %}
 </body>
-
+<script src="./js/appWelcome.js"></script>
 </html>
