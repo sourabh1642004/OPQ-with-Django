@@ -19,8 +19,11 @@ def indexpage(request):
 
 
 
-def aboutus(request):
-    return HttpResponse("welcome to onlineportal")
+def loginpage(request):
+    return render(request,"login.html")
+
+def basepage(request):
+    return render(request,"base.html")
 
 def Coursedetails(request,courseid):
     return HttpResponse(courseid)

@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block mycollege %}
+  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,19 +8,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap-css/bootstrap.css">
-    <link rel="stylesheet" href="./css/styleLogin.css">
+    <link rel="stylesheet" href="/static/bootstrap-css/bootstrap.css">
+
+    <link rel="stylesheet" href="/static/css/styleLogin.css">
+
     <title>Log in</title>
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg bg-transparent">
-    <div class="container-fluid">
-      
-      <a class="navbar-brand" href="#">OPQ</a>
-      </div>
-    </div>
-  </nav>
     <form id="loginForm">
         <h2>Please Insert your E-mail and your password to Sign in</h2>
         <div class="mb-3 inputDiv">
@@ -30,6 +27,9 @@
         </div>
         <button type="button" onclick="GetDataFromLovalStorage()" class="btn col-lg-6 text-center"><a id="submit">Sign In</a></button>
       </form>
-    <script src="./js/appLogin.js"></script>
+      
+    <script src="/static/js/appLogin.js"> </script>
+    
 </body>
 </html>
+{% endblock mycollege %}
