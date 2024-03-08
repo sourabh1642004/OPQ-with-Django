@@ -10,12 +10,12 @@ class Student(models.Model):
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField()
     email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=20)
+    phone_number = models.CharField(max_length=15)
     address = models.TextField()
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
-```
+
 
 In this model:
 
