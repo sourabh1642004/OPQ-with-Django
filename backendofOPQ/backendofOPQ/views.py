@@ -2,22 +2,24 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from django.shortcuts import render, redirect
+from news.models import News
 
 
 
 def indexpage(request):
+    newData=News.objects.all();
     data={
-        'title':'Welcome',
-        'bdata':'welcome sourabh',
-        'clist':['php','java','django'],
-        'student_details':[
-            {'name':'pradeep','phone' : 7976890679},
-            {'name':'testing','phone': 9982148469}
-        ]
+        'newsData':newData
     }
-    return render(request,"index.html")
+    return render(request,"index.html",data)
 
-
+def newsDetails(request,newsid):
+    
+    newsDetails=News.objects.get(id=newsid)
+    data={
+        'newsDetails':newsDetails
+    }
+    return render(request,"newsdetails.html",data)
 
 
 def loginpage(request):
@@ -29,30 +31,9 @@ def basepage(request):
 def Coursedetails(request,courseid):
     return HttpResponse(courseid)
 
+def signuppage(request):
+    return render(request,"signup.html")
 
-
-
-def register_student(request):
-    if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        date_of_birth = request.POST.get('date_of_birth')
-        email = request.POST.get('email')
-        phone_number = request.POST.get('phone_number')
-        address = request.POST.get('address')
-
-        student = Student.objects.create(
-            first_name=first_name,
-            last_name=last_name,
-            date_of_birth=date_of_birth,
-            email=email,
-            phone_number=phone_number,
-            address=address
-        )
-        # Redirect to a success page or another URL
-        return redirect('success_page')  # Replace 'success_page' with the appropriate URL name
-    else:
-        return render(request, 'student_registration.html')
 
 
 

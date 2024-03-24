@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block mycollege %}
+  
+
 
 
 <!DOCTYPE html>
@@ -30,14 +32,9 @@
   <div class="container">
       <article>
           <div class="welcome text-center">
-              <h1>Welcome</h1>
-              <p id="welcome-p">An online exam is a type of virtual exam undertaken on a computer device (desktop, laptop) using the internet. One can give and take an online examination from any location remotely. 
-                Most online exams are invigilated either through human proctors or through various types of proctoring software or using a mix of the two.Online exams, also known as virtual exams, enables examiners 
-                to conduct exams using the internet for remote candidates. In an online examination, candidates are expected to answer the questions on their systems. The test window closes once the exam is over. 
-                 An online exam does not have to be in an MCQ format – it can be written in any desired form.
-              </p>
-              <button class="btn" type="button"><a  id="btnH" href="login">Sign In</a></button>
-              <button class="btn" type="button"><a id="btnH" href="signup">Sign Up</a></button>
+              <h1>{{newsDetails.news_title}}</h1>
+              <p id="welcome-p">{{newsDetails.news_desc}}</p>
+             
             </div>
       </article>
   </div>
@@ -45,11 +42,5 @@
   
 </main>
 
-  <marquee onmouseover="stop()" onmouseout="start()">
-    {% for news in newsData  %}
-    <a href="/newsdetails/{{news.id}}"> {{news.news_title}} &nbsp;&nbsp;&nbsp;&nbsp; </a>
-    {% endfor %}
-  </marquee>
 </body>
-
 {% endblock mycollege %}

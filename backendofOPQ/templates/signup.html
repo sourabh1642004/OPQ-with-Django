@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block mycollege %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,22 +12,16 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/b4ff4e859b.js" crossorigin="anonymous"></script>
     <title>QOP</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <!-- //////////////////////////////////////////////////// -->
-    <nav class="navbar navbar-expand-lg bg-transparent">
-      <div class="container-fluid">
-        
-        <a class="navbar-brand" href="#">OPQ</a>
-        </div>
-      </div>
-    </nav>
+
     <div class="regForm" id="regs_form">
       <div class="row">
         <div class="col-lg-8">
-          <form id="signupform" class="col-lg-6 col-sm-12">
-
+          <form id="signupform" class="col-lg-6 col-sm-12" action="" method="post">
+                    {% csrf_token %}
               <label for=""> First Name:</label><br>
               <input type="text" class="form-control" id="firstNameInput" name="fname" required="true">
               <div class="error-msg" id="error-first-name"></div>
@@ -74,7 +70,9 @@
       </div>
     </div>
     <!-- //////////////////////////////////////////////////////////// -->
-<script src="./js/app.js"></script>
+<script src="/static/js/app.js"></script>
 </body>
 
 </html>
+
+{% endblock mycollege %}
