@@ -35,5 +35,3 @@ def signuppage(request):
     return render(request,"signup.html")
 
 
-
-
