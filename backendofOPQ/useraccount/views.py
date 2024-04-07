@@ -17,9 +17,9 @@ def signup(request):
         confirm_password = request.POST.get('spassword')
        
         if email !=  confirm_email:
-           return render(request, 'signup.html',{'error_email': 'email do not match'})
+           return render(request, 'signup.html',{'n': 'email do not match'})
         if password != confirm_password:
-            return render(request, 'signup.html', {'error_password': 'Passwords do not match'})
+            return render(request, 'signup.html', {'n': 'Passwords do not match'})
         
         user = User.objects.create(first_name=first_name, last_name=last_name, email=email, password=password)
         user.save()
