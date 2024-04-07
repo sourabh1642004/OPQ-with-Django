@@ -1,0 +1,46 @@
+{% extends "base2.html" %}
+{% block base %}
+  
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Fonawesome-->
+    <link rel="stylesheet" href="/static/bootstrap-css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
+    <link rel="stylesheet" href="/static/css/styleWelcome.css">
+    <script src="https://kit.fontawesome.com/b4ff4e859b.js" crossorigin="anonymous"></script>
+
+    <title>Welcome!</title>
+</head>
+
+<body>
+  
+
+<div class="clearfix"></div>
+
+<!--**********************************************-->
+
+<!--Start Websit body which contains: Welcoming section, and Let's start the quiz button -->
+
+<main>
+  <div class="container">
+      <article>
+          <div class="welcome text-center">
+              <h1>{{newsDetails.news_title}}</h1>
+              <p id="welcome-p">{{newsDetails.news_desc}}</p>
+             
+            </div>
+      </article>
+  </div>
+
+  
+</main>
+
+</body>
+{% endblock base %}

@@ -1,0 +1,23 @@
+<!-- quiz/templates/quiz_start.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Start</title>
+</head>
+<body>
+    <h1>{{ quiz.title }}</h1>
+    <form method="post" action="{% url 'quiz_submission' %}">
+        {% csrf_token %}
+        {% for question in questions %}
+        <h3>{{ question.text }}</h3>
+        {% for choice in question.choice_set.all %}
+        <input type="radio" id="choice_{{ choice.id }}" name="question_{{ question.id }}" value="{{ choice.id }}">
+        <label for="choice_{{ choice.id }}">{{ choice.text }}</label><br>
+        {% endfor %}
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
