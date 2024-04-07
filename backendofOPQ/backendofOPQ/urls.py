@@ -14,5 +14,6 @@ urlpatterns = [
     path('signup/',ua.signup, name="signup"),
     path('newsdetails/<newsid>', views.newsDetails),
     path('feedback/', fb.feedbackfun,name="feedback"),
-    path('afterlogin/<int:user_id>/', ua.afterlogin, name="afterlogin")
+    path('afterlogin/<int:user_id>/', ua.afterlogin, name="afterlogin"),
+    # path('quiz/',)
 ]

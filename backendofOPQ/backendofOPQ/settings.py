@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'news',
     'feedback',
     'useraccount',
+    'quiz',
 ]
 
 MIDDLEWARE = [
