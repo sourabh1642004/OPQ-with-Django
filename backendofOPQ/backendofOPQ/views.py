@@ -39,7 +39,6 @@ def Coursedetails(request,courseid):
     
 #     return render(request,"signup.html")
 
-def welcomepage(request):
-    return render(request,"welcome.html")
+
 
 

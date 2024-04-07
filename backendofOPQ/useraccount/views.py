@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login as auth_login
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -26,16 +27,30 @@ def signup(request):
     return render(request, "signup.html",{'n':n})
 
 def login(request):
+    n="fill up"
     if request.method == 'POST':
-        email = request.POST.get('femail')
+        email = request.POST.get('email')
         password = request.POST.get('password')
         
         try:
             user = User.objects.get(email=email, password=password)
-            #add if else statement
             
+            
+            return redirect('afterlogin',user_id=user.id)
+
         except User.DoesNotExist:
-            return render(request, 'login.html', {'error': 'Invalid email or password'})
+            return render(request, 'login.html', {'n': 'Invalid email or password'})
     
-    return render(request, 'login.html')
+    return render(request, 'login.html',{'n':n})
+
+def afterlogin(request,user_id):
+    try:
+        user=User.objects.get(id=user_id)
+        return render(request,'afterlogin.html',{'user':user})
+    except User.DoesNotExist:
+        return redirect('login')
+    
+    
+
+
 

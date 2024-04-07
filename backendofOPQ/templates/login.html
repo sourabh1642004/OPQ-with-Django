@@ -15,17 +15,23 @@
     <title>Log in</title>
 </head>
 <body>
-    <form id="loginForm" action="{% url 'login' %}">
+    <form id="loginForm" action="{% url 'login' %}" method="POST" >
+      {% csrf_token %}
         <h2>Please Insert your E-mail and your password to Sign in</h2>
         <div class="">
-          <label for="" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="femail" id="" aria-describedby="emailHelp">
+          <label for="" class="">Email address</label>
+          <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
         </div>
         <div class="">
-          <label for="" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" id="">
+          <label for="" class="">Password</label>
+          <input type="password" class="form-control" name="password" >
         </div>
-        <button type="button" class="btn col-lg-6 text-center"><a id="">Sign In</a></button>
+        <br>
+        <b>{{n}}</b>
+        <br>
+        <!-- <button type="submit" class="btn col-lg-5" id="submit-btn-form"><a class="nav-link" id="reg-submit-link">Submit</a></button> -->
+
+        <button type="submit"  class="btn col-lg-6 text-center"><a id=""></a>Sign In</button>
       </form>
       
     <script src="/static/js/appLogin.js"> </script>
