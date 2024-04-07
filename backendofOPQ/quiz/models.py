@@ -1,12 +1,11 @@
 from django.db import models
-# quiz/models.py
 
-from django.db import models
 
 class Quiz(models.Model):
     title = models.CharField(max_length=100)
 
 class Question(models.Model):
+    
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     text = models.CharField(max_length=200)
 
