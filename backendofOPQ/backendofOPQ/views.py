@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
+
 from django.shortcuts import render
 
 from django.shortcuts import render, redirect
@@ -22,8 +24,8 @@ def newsDetails(request,newsid):
     return render(request,"newsdetails.html",data)
 
 
-def loginpage(request):
-    return render(request,"login.html")
+# def loginpage(request):
+#     return render(request,"login.html")
 
 def basepage(request):
     return render(request,"base.html")
@@ -31,7 +33,13 @@ def basepage(request):
 def Coursedetails(request,courseid):
     return HttpResponse(courseid)
 
-def signuppage(request):
-    return render(request,"signup.html")
+# def signuppage(request):
+#     if request.method=="POST":
+#         return HttpResponseRedirect()
+    
+#     return render(request,"signup.html")
+
+def welcomepage(request):
+    return render(request,"welcome.html")
 
 

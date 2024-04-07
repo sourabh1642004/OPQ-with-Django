@@ -17,10 +17,10 @@
 <body>
     <!-- //////////////////////////////////////////////////// -->
 
-    <div class="regForm" id="regs_form">
+    <div class="regForm" id="">
       <div class="row">
         <div class="col-lg-8">
-          <form id="signupform" class="col-lg-6 col-sm-12" action="" method="post">
+          <form id="signupform" class="col-lg-6 col-sm-12" action="{% url 'signup' %}" method="post">
                     {% csrf_token %}
               <label for=""> First Name:</label><br>
               <input type="text" class="form-control" id="firstNameInput" name="fname" required="true">
@@ -40,6 +40,7 @@
               <input type="email" name="semail" id="semail" required="true" class="form-control">
               <div class="error-msg" id="error-email"></div>
               <br>
+              {{error_email}}
 
               <label for=""> Password:</label><br>
               <input type="password" class="form-control" id="Password1Input" name="password" required="true">
@@ -50,17 +51,20 @@
               <input type="password" class="form-control" id="confirmPasswordInput"  name="spassword" required="true"> 
               <div class="error-msg" id="error-password"></div>
               <br>
+              {{error_password}}
 
-              <select class="form-select" aria-label="Default select example" id="positionSelect" name="selectList" required="true">
+              <!-- <select class="form-select" aria-label="Default select example" id="positionSelect" name="selectList" required="true">
                 <option selected>Choose Technology</option>
                 <option value="HTML">HTML</option>
                 <option value="CSS">CSS</option>
                 <option value="JavaScript">JavaScript</option>
-              </select>
+              </select> -->
+              <b>{{n}}</b>
+              <br>
 
-              <button type="submit" class="btn col-lg-5" id="submit-btn-form"><a class="nav-link" id="reg-submit-link">Submit</a></button>
+              <button type="submit" class="btn col-lg-5" id="submit-btn-form"><a class="nav-link" >Submit</a></button>
                                   <!--<a class="nav-link" href="./welcome.html">Sign Up</a>-->
-              <button class="btn col-lg-5" id="sign-in"><a class="nav-link" href="./login.html" id="reg-signIn-link">SignIn</a></button>
+              <button class="btn col-lg-5" id="sign-in"><a class="nav-link" href="{% url 'login' %}" >SignIn</a></button>
 
           </form>
         </div>

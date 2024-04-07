@@ -15,17 +15,17 @@
     <title>Log in</title>
 </head>
 <body>
-    <form id="loginForm">
+    <form id="loginForm" action="{% url 'login' %}">
         <h2>Please Insert your E-mail and your password to Sign in</h2>
-        <div class="mb-3 inputDiv">
-          <label for="loginEmail" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="loginEmail" id="loginEmail" aria-describedby="emailHelp">
+        <div class="">
+          <label for="" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="femail" id="" aria-describedby="emailHelp">
         </div>
-        <div class="mb-3 inputDiv">
-          <label for="loginPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" name="loginPassword" id="loginPassword">
+        <div class="">
+          <label for="" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="">
         </div>
-        <button type="button" onclick="GetDataFromLovalStorage()" class="btn col-lg-6 text-center"><a id="submit">Sign In</a></button>
+        <button type="button" class="btn col-lg-6 text-center"><a id="">Sign In</a></button>
       </form>
       
     <script src="/static/js/appLogin.js"> </script>
