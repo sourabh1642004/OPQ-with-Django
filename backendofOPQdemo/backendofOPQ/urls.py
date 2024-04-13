@@ -17,6 +17,8 @@ urlpatterns = [
     path('feedback/', fb.feedbackfun,name="feedback"),
     path('afterlogin/<int:user_id>/', ua.afterlogin, name="afterlogin"),
     path('quiz_start/',qz.quiz_start, name='quiz_start'),
-    path('submit/',qz.quiz_submission, name='quiz_submission'),
+    path('quiz_view/<int:quiz_id>/<int:question_number>/', qz.quiz_view, name='quiz_view'),
+    path('quiz_view/<int:quiz_id>/', qz.quiz_view, name='quiz_view'),
+    path('quiz_submission/<int:quiz_id>/',qz.quiz_submission, name='quiz_submission'),
     # path('quiz/',)
 ]
