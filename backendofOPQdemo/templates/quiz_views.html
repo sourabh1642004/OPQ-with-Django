@@ -1,0 +1,25 @@
+<!-- quiz/templates/quiz_view.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz View</title>
+</head>
+<body>
+    <h1>{{ quiz.title }}</h1>
+    <h3>Question {{ question_number }} of {{ total_questions }}</h3>
+    <form action="{% url 'quiz_view' quiz.id question_number %}" method="post">
+        {% csrf_token %}
+        <h3>{{ question.text }}</h3>
+        {% for choice in question.choice_set.all %}
+            <input type="radio" id="choice_{{ choice.id }}" name="choice" value="{{ choice.id }}">{{ choice.text }}<br>
+        {% endfor %}
+        <button type="submit">Next</button>
+        {% if question_number < total_questions %}
+            <a href="{% url 'quiz_view' quiz.id question_number|add:1 %}" class="btn btn-primary">Skip</a>
+        {% endif %}
+    </form>
+</body>
+</html>
