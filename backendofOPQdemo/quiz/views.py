@@ -4,12 +4,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Quiz, Question, Choice
 
-@login_required
+
 def quiz_start(request):
     quizzes = Quiz.objects.all()
     return render(request, 'quiz_start.html', {'quizzes': quizzes})
 
-@login_required
 def quiz_view(request, quiz_id, question_number=1):
     quiz = Quiz.objects.get(id=quiz_id)
     questions = Question.objects.filter(quiz=quiz)
@@ -36,7 +35,7 @@ def quiz_view(request, quiz_id, question_number=1):
     }
     return render(request, 'quiz_view.html', context)
 
-@login_required
+
 def quiz_submission(request, quiz_id):
     score = request.session.get('score', 0)
     request.session['score'] = 0  # Reset score after submission
