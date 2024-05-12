@@ -11,7 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', ua.login, name="login"),
     path('course/<int:courseid>', views.Coursedetails),
-    path('', views.indexpage),
+    path('', views.indexpage,name="homepage"),
     path('signup/',ua.signup, name="signup"),
     path('newsdetails/<newsid>', views.newsDetails),
     path('feedback/', fb.feedbackfun,name="feedback"),
