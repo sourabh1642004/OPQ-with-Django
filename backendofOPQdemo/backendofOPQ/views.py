@@ -9,7 +9,8 @@ from news.models import News
 
 
 def indexpage(request):
-    newData=News.objects.all();
+    newData=News.objects.all()
+    
     data={
         'newsData':newData
     }

@@ -13,8 +13,9 @@
     <p>First Name: {{ user.first_name }}</p>
     <p>Last Name: {{ user.last_name }}</p>
     <p>Email: {{ user.email }}</p>
-    <p>Bio: {{ user.bio }}</p>
-    <p>Phone: {{ user.phone }}</p>
-    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    {% comment %} <p>Bio: {{ user.bio }}</p>
+    <p>Phone: {{ user.phone }}</p> {% endcomment %}
+    <a href="{% url 'editprofile' user.id %}">Edit Profile</a>
+    <a href="{% url 'afterlogin' user.id %}"> go back</a>
 </body>
 </html>
