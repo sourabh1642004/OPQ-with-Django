@@ -49,6 +49,30 @@ def afterlogin(request,user_id):
         return render(request,'afterlogin.html',{'user':user})
     except User.DoesNotExist:
         return redirect('login')
+
+def profile(request):
+    if 'user_id' not in request.session:
+        return redirect('login')
+
+    user = User.objects.get(id=request.session['user_id'])
+    return render(request, 'profile.html', {'user': user})
+
+def edit_profile(request):
+    if 'user_id' not in request.session:
+        return redirect('login')
+
+    user = User.objects.get(id=request.session['user_id'])
+
+    if request.method == 'POST':
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.email = request.POST.get('email')
+        user.bio = request.POST.get('bio')
+        user.phone = request.POST.get('phone')
+        user.save()
+        return redirect('profile')
+
+    return render(request, 'edit_profile.html', {'user': user})
     
     
 
