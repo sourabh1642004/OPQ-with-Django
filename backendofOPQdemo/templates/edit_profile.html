@@ -1,0 +1,24 @@
+<!-- user_accounts/templates/edit_profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name" value="{{ user.first_name }}" required><br>
+        <input type="text" name="last_name" placeholder="Last Name" value="{{ user.last_name }}" required><br>
+        <input type="email" name="email" placeholder="Email" value="{{ user.email }}" required><br>
+        <textarea name="bio" placeholder="Bio">{{ user.bio }}</textarea><br>
+        <input type="text" name="phone" placeholder="Phone" value="{{ user.phone }}"><br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'profile' %}">Cancel</a>
+</body>
+</html>
