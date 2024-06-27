@@ -1,15 +1,18 @@
 from django.http import HttpResponse
 from django.http import HttpResponse,HttpResponseRedirect
-
+from django.utils import timezone
+from datetime import timedelta
 from django.shortcuts import render
-
 from django.shortcuts import render, redirect
 from news.models import News
 
-
+#define time range
+time_threshold = timezone.now() - timedelta(days=7)
 
 def indexpage(request):
-    newData=News.objects.all()
+    
+    newData=News.objects.order_by('date')[0:1]
+    # newData=News.objects.all()
     
     data={
         'newsData':newData

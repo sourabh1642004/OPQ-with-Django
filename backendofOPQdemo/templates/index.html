@@ -45,9 +45,9 @@
   
 </main>
 
-  <marquee onmouseover="stop()" onmouseout="start()">
+  <marquee  style="background-color: #2d3436; color:#ffbb00;" onmouseover="this.stop()" onmouseout="this.start()">
     {% for news in newsData  %}
-    <a href="/newsdetails/{{news.id}}"> {{news.news_title}} &nbsp;&nbsp;&nbsp;&nbsp; </a>
+    <a style="color:#ffbb00;" href="/newsdetails/{{news.id}}"> {{news.title}} &nbsp;&nbsp;&nbsp;&nbsp; </a>
     {% endfor %}
   </marquee>
 </body>

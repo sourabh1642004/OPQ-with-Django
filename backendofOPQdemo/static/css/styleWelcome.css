@@ -6,7 +6,7 @@ html {
     scroll-behavior: smooth;
   }
 hr{
-    background-color: #aca7a7;
+    background-color: #2d3436;
     box-sizing: content-box;
     height: 0.5px;
     overflow: visible;
@@ -23,16 +23,16 @@ hr{
 /** Navbar ***/
 .navbar .navbar-brand{
     font-size: 70px;
-    color:  #5e55a5;
+    color:  #2d3436;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold; 
  }
  #welnav {
-    background-color: black;
+    background-color:#2d3436;
     text-align: center;
     width: auto;
     height: auto;
-    color: white;
+    color:#ffbb00;
     overflow: hidden;
   }
 .navbar .container-fluid{
@@ -40,36 +40,36 @@ hr{
 }
 .navbar .navbar-collapse ul{
     margin: 10px auto;
-    color: black;
+    color: #ffbb00;
     font-size: 25px;
 }
 .navbar-toggler{
-    border: 2px solid #5e55a5;
+    border: 2px solid #2d3436;
 }
 .navbar .nav-link{
-    color: black;
+    color:#ffbb00;
     margin-right: 30px;
 }
 .navbar .btn{
     padding: 10px 30px;
-    background-color: #5e55a5;
-    color:white
+    background-color:#ffbb00;
+    color:#2d3436;
 }
 #btnH{
     padding: 10px 30px;
-    background-color: #5e55a5;
-    color:white
+    background-color:#ffbb00;
+    color:#2d3436;
 }
 .navbar .btn .nav-link{
-    color:white;
+    color:#2d3436;
     margin-right: 0;
 }
 .navbar .btn1{
-    color: #5e55a5;
+    color:#ffbb00;
     margin-right: 10px;
 }
 .navbar ul{
-    text-align:center
+    text-align:center;
 }
 /******** Welcom ********/
 .container{
@@ -82,33 +82,34 @@ hr{
 }
 
 .welcome .btn{
-    background-color: white;
-    height: 60px;
+    /* background-color: white; */
+    height: 49px;
     margin-top: 50px;
-    border: 2px solid #5e55a5;
-    transition: 0.5s ease-in-out;
+    border: 2px solid #ffbb00;
+    /* transition: 0.5s ease-in-out; */
+    padding:1px 1px 1px 1px;
 }
 .welcome .btn:hover{
-    background-color: #5e55a5;
-    color: white !important;
+    background-color: #ffbb00;
+    color: #2d3436 !important;
 }
 .welcome .btn a{
-    color: black;
+    color: #ffbb00;
     text-decoration: none;
     
 }
 .welcome .btn a:hover{
-    color: white !important;
+    color: #2d3436 !important;
 }
 
 
 
 @media screen and (max-width:992px) {
     .navbar ul{
-        color: white;
+        color:#2d3436;
     }
     .collapse.show{
-        background-color:#5e55a5 ;
+        background-color:#ffbb00 ;
         z-index: 111;
         border-radius: 10px;
     }
