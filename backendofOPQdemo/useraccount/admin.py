@@ -6,5 +6,4 @@ class userAdmin(admin.ModelAdmin):
 
 admin.site.register(User,userAdmin)
 
-
 # Register your models here.

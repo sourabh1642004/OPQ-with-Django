@@ -19,14 +19,14 @@
     <title>Quiz View</title>
 </head>
 <body>
-    <div class="quiz-content">
+   <div class="quiz-content">
 
         <div class="quiz-main-heading">
-            <h1>{{ quiz.title }}</h1>
+            <!-- <h1>{{ quiz.title }}</h1> -->
         </div>
       
         <div class="quiz-main-heading">
-            <h3>Question {{ question_number }} of {{ total_questions }}</h3>
+            <h1>Question {{ question_number }} of {{ total_questions }}</h1>
 
         </div>
 
@@ -41,22 +41,19 @@
 
 
 
-            <div class="quiz-options">
+            <div class="quiz-options" >
                 <ul>
                     {% for choice in question.choice_set.all %}
                       
-                        <input type="radio" id="choice_{{ choice.id }}" name="choice" value="{{ choice.id }}">{{ choice.text }}<br>                
+                        <input type="checkbox" id="choice_{{ choice.id }}" name="choice" value="{{ choice.id }}">{{ choice.text }}<br>                
                       
                     {% endfor %}
                 </ul>
             </div>
 
-            <div class="button">
-                <button type="submit">Next</button>
-
+            <div class="btn-container" > <!-- A new container for centering the button -->
+                <button id="btnH1" type="submit">Next</button>
             </div>
-
-
             <!-- {% if question_number < total_questions %}
                 <a href="{% url 'quiz_view' quiz.id question_number|add:1 %}" class="btn btn-primary">Skip</a>
             {% endif %} -->

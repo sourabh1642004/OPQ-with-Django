@@ -5,6 +5,7 @@ class News(models.Model):
     title=models.CharField(max_length=100)
     desc=HTMLField()
     pdf=models.FileField(upload_to='pdfs/')
+    
 
 
 
