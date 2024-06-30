@@ -4,38 +4,38 @@ from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-from news.models import News
+from All.models import update
 
 #define time range
 time_threshold = timezone.now() - timedelta(days=7)
 
 def indexpage(request):
     
-    newData=News.objects.order_by('date')[0:1]
-    # newData=News.objects.all()
+    updatedata=update.objects.order_by('date')[0:3]
+    # updatedata=update.objects.all()
     
-    data={
-        'newsData':newData
+    updatedata={
+        'updatedata':updatedata
     }
-    return render(request,"index.html",data)
+    return render(request,"index.html",updatedata)
 
-def newsDetails(request,newsid):
+def updatedetails(request,updateid):
     
-    newsDetails=News.objects.get(id=newsid)
+    updatedetails=update.objects.get(id=updateid)
     data={
-        'newsDetails':newsDetails
+        'updatedetails':updatedetails
     }
-    return render(request,"newsdetails.html",data)
+    return render(request,"updatedetails.html",data)
 
 
 # def loginpage(request):
 #     return render(request,"login.html")
 
-def basepage(request):
-    return render(request,"base.html")
+# def basepage(request):
+#     return render(request,"base.html")
 
-def Coursedetails(request,courseid):
-    return HttpResponse(courseid)
+# def Coursedetails(request,courseid):
+#     return HttpResponse(courseid)
 
 # def signuppage(request):
 #     if request.method=="POST":

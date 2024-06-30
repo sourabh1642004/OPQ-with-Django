@@ -46,8 +46,8 @@
 </main>
 
   <marquee  style="background-color: #2d3436; color:#ffbb00;" onmouseover="this.stop()" onmouseout="this.start()">
-    {% for news in newsData  %}
-    <a style="color:#ffbb00;" href="/newsdetails/{{news.id}}"> {{news.title}} &nbsp;&nbsp;&nbsp;&nbsp; </a>
+    {% for update in updatedata  %}
+    <a style="color:#ffbb00;" href="/updatedetails/{{update.id}}"> {{update.title}} &nbsp;&nbsp;&nbsp;&nbsp; </a>
     {% endfor %}
   </marquee>
 </body>
