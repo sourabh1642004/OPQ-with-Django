@@ -19,8 +19,8 @@
 
     <div class="regForm" id="">
       <div class="row">
-        <div class="col-lg-8">
-          <form id="signupform" class="col-lg-6 col-sm-12" action="{% url 'signup' %}" method="post">
+        <div>
+          <form id="signupform"  action="{% url 'signup' %}" method="post">
                     {% csrf_token %}
               <label for=""> First Name:</label><br>
               <input type="text" class="form-control" id="firstNameInput" name="fname" required="true">
@@ -68,9 +68,9 @@
 
           </form>
         </div>
-        <div class="dvimg col-lg-4">
+        <!-- <div class="dvimg col-lg-4">
             
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- //////////////////////////////////////////////////////////// -->

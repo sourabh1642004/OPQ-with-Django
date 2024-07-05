@@ -87,7 +87,9 @@ hr{
     margin-top: 50px;
     border: 2px solid #ffbb00;
     /* transition: 0.5s ease-in-out; */
+    background-color: #2d3436;
     padding:1px 1px 1px 1px;
+    border-radius: 2px;
 }
 .welcome .btn:hover{
     background-color: #ffbb00;
@@ -102,7 +104,28 @@ hr{
     color: #2d3436 !important;
 }
 
+.top-right-links {
+    position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
+    top: 0;
+    right: 0;
+    padding: 10px; /* Adjust as needed */
+}
 
+.styled-link {
+    display: inline-block;
+    background-color: #2d3436;
+    color: #ffbb00;
+    text-decoration: none;
+    padding: 10px 15px; /* Adjust based on your preference */
+    margin: 5px; /* Space between buttons */
+    border: 2px solid #ffbb00;
+    text-align: center;
+}
+
+.styled-link:hover {
+    color: #2d3436;
+    background-color: #ffbb00;
+}
 
 @media screen and (max-width:992px) {
     .navbar ul{

@@ -11,14 +11,17 @@
     <div class="profile-container">
         <div class="profile-header">
             <!-- <img src="{{ user.profile_picture_url }}" alt="Profile Picture" class="profile-picture"> -->
-            <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+            <h1>Profile</h1>
             <p class="role">Your Role or Profession</p>
         </div>
         <div class="profile-info">
+
+            <p><strong>First Name:</strong> {{ user.first_name }} </p>
+            <p><strong>Last Name:</strong> {{ user.last_name }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
-            <p><strong>Phone:</strong> {{ user.phone }}</p>
+            <!-- <p><strong>Phone:</strong> {{ user.phone }}</p>
             <p><strong>Bio:</strong> {{ user.bio }}</p>
-        </div>
+        </div> -->
         <div class="social-links">
             <!-- Example: LinkedIn -->
             <!-- <a href="{{ user.linkedin_url }}" class="social-link">LinkedIn</a> -->

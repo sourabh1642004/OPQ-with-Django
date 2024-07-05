@@ -1,43 +1,50 @@
-
 {% extends "base2.html" %}
 {% block base %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Fonawesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Fonawesome-->
     <link rel="stylesheet" href="/static/bootstrap-css/bootstrap.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/css/styleWelcome.css">
     <title>Welcome!</title>
 </head>
+
 <body>
-<main>
-  <div class="container">
-      <article>
-          <div class="welcome text-center">
-          <a href="{% url 'profile' user.id %}" >Profile</a>
-          <a href="{% url 'homepage' %}" >Log out</a>
-          
-          
-              <h1>Welcome {{user.first_name}}</h1>
-              <p id="welcome-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et minima hic iusto voluptatem ratione, veniam velit quasi eum aliquam cum impedit dignissimos corrupti accusantium neque, laboriosam nesciunt delectus ab id.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius porro, repudiandae reiciendis explicabo numquam odio assumenda dolor est blanditiis voluptates itaque, dignissimos pariatur, laborum iusto? Exercitationem dolor reprehenderit quod.
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, accusantium eligendi provident, explicabo ex et enim repellat sit ea cupiditate laudantium minus nobis molestiae vel ullam aspernatur? Provident, alias dolor!
-              </p>
-              
-              <button class="btn col-lg-3" type="button"><a href="/quiz_start" >Let's Start</a></button>
-          </div>
-      </article>
-  </div>
-</main> 
+    <main>
+        <div class="container">
+            <article>
+                <div class="welcome text-center">
+                    <div class="top-right-links">
+                        <a href="{% url 'profile' user.id %}" role="button" class="styled-link">Profile</a>
+                        <a href="{% url 'homepage' %}" role="button" class="styled-link">Log out</a>
+                    </div>
 
- 
 
-<!--**********************************************-->
+                    <h1>Welcome {{user.first_name}}</h1>
+                    <!-- <h3>Welcome to OPQ!</h3> -->
+                     <br/>
+                    <h5>Embark on Your Quest for Knowledge</h5>
+                    <p>Challenge yourself and see where you stand among peers.Whether you're a student looking to test your knowledge, a professional aiming to sharpen your skills, or just a curious mind eager to learn, OPQ is the place for you. Join us today and start your journey towards knowledge and excellence!</p>
+
+                    <button class="btn col-lg-3" type="button"><a href="/quiz_start">Let's Start</a></button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+
+
+    <!--**********************************************-->
 </body>
 <!-- <script src="/static/js/appWelcome.js"></script> -->
+
 </html>
 {% endblock base %}
