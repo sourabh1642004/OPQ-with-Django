@@ -112,17 +112,16 @@
 </head>
 <<<<<<< HEAD
 <body>
-    <div>
+    <!-- <div>
         <a href="{% url 'quiz_start' user.id %}">Back</a>
     </div>
-    <div>
+    <div> -->
 =======
 <!-- Add a class to the body for styling the background -->
 
 <body class="quiz-results-page">
 
     <div class="results-container">
->>>>>>> 5321fb4fba8d9d51101f883e23d890c6acfcd8a9
         <h1 class="quiz-main-heading">Quiz Submitted</h1>
         <p class="quiz-main-heading">Your score: {{ score }}</p>
         <!-- Detailed feedback based on the score -->
@@ -136,7 +135,7 @@
             {% endif %}
         </div>
         <div class="button-container">
-            <a href="/quiz_start" class="re-test-button">Re-Test</a>
+            <a href="{% url 'quiz_start' user.id %}" class="re-test-button">Re-Test</a>
         </div>
     </div>
 </body>
