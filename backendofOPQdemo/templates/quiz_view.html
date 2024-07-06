@@ -30,7 +30,7 @@
 
         </div>
 
-        <form action="{% url 'quiz_view' quiz.id question_number %}" method="post">
+        <form action="{% url 'quiz_view' user.id quiz.id question_number %}" method="post">
 
             {% csrf_token %}
 

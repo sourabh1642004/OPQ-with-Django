@@ -23,15 +23,20 @@
     <title>Quiz Start</title>
   </head>
   <body>
+    
+    <div class="back" style="text-align: right;">
+      <a href="{% url 'afterlogin' user.id %}" class="btn btn-primary">Back</a>
+    </div>
+
     <div class="quiz-content">
       <div class="quiz-main-heading start">
-        <h1 style="color: #ffbb00; text-align: center;">Click Any Quiz</h1>
+        <h1 style="color: #ffbb00; text-align: center;">{{user.first_name}} Click Any Quiz </h1>
       </div>
 
       <div class="type-of-quiz">
         <ul>
           {% for quiz in quizzes %}
-          <li><a href="{% url 'quiz_view' quiz.id %}"><p>{{ quiz.title }} </p></a></li>
+          <li><a href="{% url 'quiz_view' user.id quiz.id %}"><p>{{ quiz.title }} </p></a></li>
           {% endfor %}
         </ul>
       </div>
