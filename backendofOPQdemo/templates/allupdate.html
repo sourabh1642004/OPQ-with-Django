@@ -14,17 +14,38 @@
 </head>
 <body>
 <div>
-    <div>
+    <div class="beforetable">
         <h1 style="text-align: center;">All update</h1>
-        <ul style="padding-top: 50px;">
-        {% for update in totalupdate %}
-        <h3 style="text-align: center;">
-            <a href="/updatedetails/{{update.id}}"><p style="color: black;">{{ update.title }} &nbsp;&nbsp; {{update.date}}</p></a>
-        </h3>
-        {% endfor %}
-      </ul>
+        <table class="table">
+            <tr>
+                <th>DATE & TIME</th>  
+                <th>TOPIC</th>
+            </tr>
+
+                {% for update in totalupdate %}
+                <tr>
+                    <td><p>{{update.date}}</p></td>
+                    <td><p><a href="/updatedetails/ {{update.id}}">{{update.title}}</a></p></td>
+                </tr>
+                {% endfor %}
+        </table>
     </div>
 </div>
 </body>
+<style>
+    .table{
+        border:"1";
+        margin-top: 40px;
+        text-align: center;
+        text-transform: capitalize;
+        border-width: 10px;
+        border-style: solid;
+        }
+    .beforetable{
+        margin-left: 20%;
+        margin-right: 20%;
+
+    }
+</style>
 </html>
 {% endblock base %}
