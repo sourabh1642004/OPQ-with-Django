@@ -18,4 +18,6 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     text = models.CharField(max_length=100)
     is_correct = models.BooleanField(default=False)
+    def __str__(self) -> str:
+        return self.text
 # Create your models here.
