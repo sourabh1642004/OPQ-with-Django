@@ -32,6 +32,7 @@
         .button-container {
             text-align: center;
             margin-top: 20px;
+            padding: 10px;
         }
 
 
@@ -135,6 +136,7 @@
             {% endif %}
         </div>
         <div class="button-container">
+            <a href="{% url 'afterlogin' user.id %}" class="re-test-button">Back</a>
             <a href="{% url 'quiz_start' user.id %}" class="re-test-button">Re-Test</a>
         </div>
     </div>

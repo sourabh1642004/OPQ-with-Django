@@ -22,11 +22,28 @@
     <link rel="stylesheet" href="/static/css/quiz.css" />
     <title>Quiz Start</title>
   </head>
+  <style>
+    .back{
+      text-align: center;
+            margin-top: 20px;
+    }
+   .backButton{
+            display: inline-block;
+            background-color: #ffbb00;
+            color: #2d3436;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+   }
+    .backButton:hover {
+              background-color: #2d3436;
+              color: #ffbb00;
+          }
+  </style>
   <body>
     
-    <div class="back" style="text-align: right;">
-      <a href="{% url 'afterlogin' user.id %}" class="btn btn-primary">Back</a>
-    </div>
+    
 
     <div class="quiz-content">
       <div class="quiz-main-heading start">
@@ -39,6 +56,9 @@
           <li><a href="{% url 'quiz_view' user.id quiz.id %}"><p>{{ quiz.title }} </p></a></li>
           {% endfor %}
         </ul>
+        <div class="back">
+          <a href="{% url 'afterlogin' user.id %}" class="backButton">Back</a>
+        </div>
       </div>
     </div>
   </body>
