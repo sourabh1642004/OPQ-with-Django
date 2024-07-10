@@ -29,8 +29,9 @@
         </div>
         <div class="profile-actions">
             <a href="{% url 'editprofile' user.id %}" class="edit-profile-btn">Edit Profile</a>
-            <a href="{% url 'afterlogin' user.id %}" class="go-back-btn">Go Back</a>
-            <a href="{% url 'changepassword' user.id %}" class="go-back-btn">Go Back</a>
+            <a href="{% url 'changepassword' user.id %}" class="go-back-btn">Change Password</a>
+            <a href="{% url 'afterlogin' user.id %}" class="edit-profile-btn">Go Back</a>
+            
             
 
         </div>

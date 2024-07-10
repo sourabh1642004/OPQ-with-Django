@@ -44,6 +44,23 @@ h2{
     color:#2d3436;
     font-size: 1.3rem;
 }
+
+/* Add this to backendofOPQdemo/static/css/styleForgetPassword.css */
+
+.forget-password-link {
+    display: block; /* Makes the link appear on its own line */
+    text-align: left; /* Centers the link */
+    /* margin-top: 10px; Adds some space above the link */
+    color: white; /* Sets the text color */
+    font-weight: bold; /* Makes the text bold */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.forget-password-link:hover {
+    color: #2d3436; /* Changes text color on hover for visual feedback */
+    text-decoration: underline; /* Adds underline on hover for visual feedback */
+}
+
 @media (max-width:1280px) {
     #loginForm{
         width: 70% !important;

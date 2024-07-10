@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.conf import settings
 import random
+import string
 def signup(request):
     n="fill the all details"
     if request.method == 'POST':
@@ -30,7 +31,7 @@ def signup(request):
     return render(request, "signup.html",{'n':n})
 
 def login(request):
-    n="fill up"
+    n="Fill Up"
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -79,30 +80,42 @@ def edit_profile(request,user_id):
     return render(request, 'edit_profile.html', {'user': user})
     
     
+
+
 def forgetpassword(request):
-    
     if request.method == 'POST':
         email = request.POST.get('email')
-        email=email
-        otp = random.randint(100000, 999999)
+        # Generate a mixed password: 8 characters long, including letters and digits
+        characters = string.ascii_letters + string.digits
+        mixed_password = ''.join(random.choice(characters) for i in range(8))
 
         try:
             user = User.objects.get(email=email)
-            subject=user.first_name+" your otp is"
-            otpis=str(otp)
-            send_mail(subject,otpis,email,["sourabh1642004@gmail.com"])
-            user.password=otp
+            subject = f"Password Reset Request for {user.first_name}"
+            message = (
+                f"Dear {user.first_name},\n\n"
+                "Your request to reset your password has been approved. "
+                "Please find your new password below. We strongly recommend "
+                "changing this password immediately after logging in.\n\n"
+                f"New Password: {mixed_password}\n\n"
+                "If you did not request a password reset, please ignore this email or contact support.\n\n"
+                "Best,\nThe Team Of OPQ"
+            )
+            send_mail(subject, message, "sourabh1642004@gmail.com", [email])
+            user.password=mixed_password  # Use set_password to properly hash the password
             user.save()
-            return render(request,'forgetpassword.html')
+            return render(request, 'forgetpassword.html', {'message': 'Password reset email has been sent.'})
         except User.DoesNotExist:
             return render(request, 'forgetpassword.html', {'message': 'Email does not exist.'})
 
-    return render(request,'forgetpassword.html')
+    return render(request, 'forgetpassword.html')
+
+
 
 def changepassword(request,user_id):
     user=User.objects.get(id=user_id)
     if request.method == 'POST':
-        password=request.POSt.get('password')
+        password=request.POST.get('password')
         confirm_password=request.POST.get('spassword')
         if password==confirm_password:
             user.password=password
