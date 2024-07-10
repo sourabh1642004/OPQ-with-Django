@@ -5,7 +5,10 @@ from django.http import HttpResponse
 
 from django.http import HttpResponse,HttpResponseRedirect
 from .models import User
-
+from django.contrib.auth import authenticate, login, logout
+from django.core.mail import send_mail
+from django.conf import settings
+import random
 def signup(request):
     n="fill the all details"
     if request.method == 'POST':
@@ -76,6 +79,39 @@ def edit_profile(request,user_id):
     return render(request, 'edit_profile.html', {'user': user})
     
     
+def forgetpassword(request):
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        email=email
+        otp = random.randint(100000, 999999)
 
+        try:
+            user = User.objects.get(email=email)
+            subject=user.first_name+" your otp is"
+            otpis=str(otp)
+            send_mail(subject,otpis,email,["sourabh1642004@gmail.com"])
+            user.password=otp
+            user.save()
+            return render(request,'forgetpassword.html')
+        except User.DoesNotExist:
+            return render(request, 'forgetpassword.html', {'message': 'Email does not exist.'})
 
+    return render(request,'forgetpassword.html')
 
+def changepassword(request,user_id):
+    user=User.objects.get(id=user_id)
+    if request.method == 'POST':
+        password=request.POSt.get('password')
+        confirm_password=request.POST.get('spassword')
+        if password==confirm_password:
+            user.password=password
+            user.save()
+            return redirect('login')
+        else:
+            return render(request,'changepassword.html',{'message':'password does not match.'})
+    
+    return render(request,'changepassword.html',{'user_id':user.id})
+
+   
+   

@@ -4,12 +4,15 @@ from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts import render
 from django.shortcuts import render, redirect
+
 from All.models import update
 
 #define time range
 time_threshold = timezone.now() - timedelta(days=7)
 
 def indexpage(request):
+
+ 
     
     updatedata=update.objects.order_by('date')[0:3]
     # updatedata=update.objects.all()
@@ -44,5 +47,12 @@ def updatedetails(request,updateid):
 #     return render(request,"signup.html")
 
 
-
+# def mail(request):
+#     send_mail(
+#         'Testing of mail',
+#         'This is a test mail for testing the mail sending functionality of the website.',
+#         'sourabh1642004@gmail.com',
+#         ['sourabh1642004@gmail.com'],
+#         fail_silently=False,
+#     )
 
