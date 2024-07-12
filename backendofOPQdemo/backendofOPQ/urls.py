@@ -17,4 +17,5 @@ urlpatterns = [
     path('quiz_submission/<int:user_id>/<int:quiz_id>',qz.quiz_submission, name='quiz_submission'),
     path('accounts/', include('useraccount.urls')),
     path('allupdate/',fb.allupdates)
+    # path('jet/',include('jet.urls','jet')),
 ]
